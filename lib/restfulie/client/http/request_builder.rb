@@ -48,6 +48,7 @@ module Restfulie
         # Path (e.g. http://restfulie.com/posts => /posts)
         def path
           host.path
+          host.query ? "#{host.path}?#{host.query}" : host.path
         end
 
         def get(params = {})
